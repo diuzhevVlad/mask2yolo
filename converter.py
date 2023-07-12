@@ -3,11 +3,11 @@ import sys
 import glob
 import os
 
+EXTENTION = "png"
 CLASS_ID = 0
 MASK_THRES_MIN, MASK_THRES_MAX = 127,255
 AREA_THRES = 0.005
 CURVE_RATIO = 0.005
-
 
 def generate_yolo_mask_txt(mask):
     height, width = mask.shape
@@ -37,7 +37,7 @@ def generate_yolo_mask_txt(mask):
     return file_s
 
 if __name__ == "__main__":
-    file_arr = glob.glob(sys.argv[1]+"/*.png")
+    file_arr = glob.glob(sys.argv[1]+f"/*.{EXTENTION}")
     if not os.path.exists(sys.argv[2]):
         os.makedirs(sys.argv[2])
     for file in file_arr:
