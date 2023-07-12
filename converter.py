@@ -4,9 +4,10 @@ import glob
 import os
 
 CLASS_ID = 0
-CURVE_RATIO = 0.005
-AREA_THRES = 0.005
 MASK_THRES_MIN, MASK_THRES_MAX = 127,255
+AREA_THRES = 0.005
+CURVE_RATIO = 0.005
+
 
 def generate_yolo_mask_txt(mask):
     height, width = mask.shape
